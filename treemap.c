@@ -69,15 +69,19 @@ void eraseTreeMap(TreeMap * tree, void* key){
     removeNode(tree, node);
 
 }
-
+// key podria ser un caracter!!!
 Pair * searchTreeMap(TreeMap * tree, void* key) {
-    Pair *aux_pair = tree->root->pair;
-    while (aux_pair != NULL){
-        if (aux_pair->key == key) return aux_pair;
-        else if (aux_pair->key < key){
-            aux_pair = aux_pair->left;
-        } else if (aux_pair->key > key){
-            aux_pair = aux_pair->right;
+    TreeNode *aux_node = tree->root;
+    while (aux_node != NULL){
+        void* current_key = aux_node->pair->key;
+        if (tree->lower_than(key, current_key) == 0 && tree->lower_than(current_key, key) == 0){    // Si son iguales
+            tree->current = aux_node;
+            return aux_node->pair;
+        }
+        else if (tree->lower_than(key, current_key)){   // Si key es menor a current
+            aux_node = aux_node->left;
+        } else {
+            aux_node = aux_node->right;
         }
     }
     return NULL;

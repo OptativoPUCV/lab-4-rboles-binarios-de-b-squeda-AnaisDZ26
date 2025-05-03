@@ -17,3 +17,9 @@ treemap.c:80:32: error: 'Pair {aka struct Pair}' has no member named 'right'
              aux_pair = aux_pair->right;
                                 ^~
 252d50e
+Sat, May  3, 2025  7:27:33 PM: 
+ treemap.c | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+ tests:  11|6
+total_score: 15/70
+0b8f0d8
