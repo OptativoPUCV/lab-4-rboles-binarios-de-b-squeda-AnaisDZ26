@@ -154,3 +154,9 @@ treemap.c:167:35: error: 'current' undeclared (first use in this function)
                                    ^~~~~~~
 treemap.c:167:35: note: each undeclared identifier is reported only once for each function it appears in
 7d9514c
+Sun, May  4, 2025  1:20:10 AM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  29|0
+total_score: 70/70
+d530792

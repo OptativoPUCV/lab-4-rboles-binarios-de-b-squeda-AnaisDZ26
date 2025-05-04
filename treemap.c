@@ -164,7 +164,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
     while (aux_node != NULL){
         // En caso de que key es menor a key de aux
-        if (tree->lower_than(key, current->pair->key)){
+        if (tree->lower_than(key, aux_node->pair->key)){
             candidate = aux_node;   // Es candidato
             aux_node = aux_node->left; // Y seguimos buscando si hay algun candidato mas pequeño
         } else {
