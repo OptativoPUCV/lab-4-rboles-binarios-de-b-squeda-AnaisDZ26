@@ -97,6 +97,28 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         free(node); // Eliminar el nodo liberando memoria
         return;
     }
+    // Caso con un hijo
+    if (node->left == NULL || node->right == NULL){
+        // En primer lugar hay que verificar de que lado el hijo de node no es null
+        TreeNode *hijo = (node->left != NULL) ? node->left : node->right;
+
+        // Subcaso: node es la raiz
+        if (node->parent == NULL){
+            tree->root = hijo; // Ahora el hijo de node es la raiz
+
+        // En caso de que si tenga padre, hay que verificar de que lado esta node
+        // En caso de que sea hijo izquierdo
+        } else if (node->parent->left == node) {
+            node->parent->left = hijo; // El puntero de parent apunta al hijo de node
+        // En caso de que node sea hijo derecho
+        } else {
+            node->parent->right = hijo;
+        }
+        // El puntero del hijo de node apunta a parent de node
+        child->parent = node->parent;
+        free(node);
+        return;
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
