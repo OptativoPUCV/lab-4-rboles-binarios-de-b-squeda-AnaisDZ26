@@ -156,6 +156,27 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 }
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    // Caso en el cual si esta la clave
+    if (searchTreeMap(tree, key) != NULL) return tree->current->pair;
+
+    TreeNode *aux_node = tree->root;
+    TreeNode *candidate = NULL;
+
+    while (aux_node != NULL){
+        // En caso de que key es menor a key de aux
+        if (tree->lower_than(key, current->pair->key)){
+            candidate = aux_node;   // Es candidato
+            aux_node = aux_node->left; // Y seguimos buscando si hay algun candidato mas pequeño
+        } else {
+            // Caso en el cual key es mayor o igual
+            aux_node = aux_node->right;
+        }
+    }
+    // Retornar el mejor candidato
+    if (candidate != NULL){
+        tree->current = candidate;
+        return candidate->pair;
+    }
     return NULL;
 }
 
