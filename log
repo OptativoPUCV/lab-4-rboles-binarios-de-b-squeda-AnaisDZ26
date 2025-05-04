@@ -126,3 +126,9 @@ treemap.c:170:15: error: unused variable 'aux_node' [-Werror=unused-variable]
                ^~~~~~~~
 cc1.exe: all warnings being treated as errors
 1a3da0a
+Sun, May  4, 2025 12:57:30 AM: 
+ treemap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+ tests:  22|2
+total_score: 50/70
+cebccb7

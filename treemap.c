@@ -170,10 +170,10 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *aux_node = tree->current;
 
     // Si tiene subarbol derecho, el par debe estar en el minimo de ese subarbol
-    if (node->right != NULL){
-        node = minimum(node->right);
-        tree->current = node;
-        return node->pair;
+    if (aux_node->right != NULL){
+        aux_node = minimum(aux_node->right);
+        tree->current = aux_node;
+        return aux_node->pair;
     }
 
     return NULL;
