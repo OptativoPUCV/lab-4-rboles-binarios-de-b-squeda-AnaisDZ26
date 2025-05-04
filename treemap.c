@@ -175,6 +175,13 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = aux_node;
         return aux_node->pair;
     }
-
-    return NULL;
+    // En otro caso, buscar el siguiente en parents
+    TreeNode *parent = aux_node->parent;
+    // "subir" hasta encontrar un nodo donde current es el hijo izquierdo
+    while (parent != NULL && parent->right == aux_node){
+        aux_node = parent;
+        parent = parent->parent;
+    }
+    tree->current = parent;
+    return parent->pair;
 }
