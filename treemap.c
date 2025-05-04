@@ -76,8 +76,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
                 tree->current = new_node;
                 return;
             }
+            aux_node = aux_node->right;
         }
-        aux_node = aux_node->right;
     }
 }
 
