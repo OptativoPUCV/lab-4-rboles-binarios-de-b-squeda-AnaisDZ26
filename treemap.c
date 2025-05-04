@@ -82,7 +82,21 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-
+    // Caso sin hijos (hoja)
+    if (node->left == NULL && node->right == NULL){
+        // Subcaso: El nodo es la raiz
+        if (node->parent == NULL){  
+            tree->root = NULL; 
+        } else if (node->parent->left == node){
+            // Desenlazar el nodo del lado izquierdo de parent
+            node->parent->left = NULL;
+        } else {
+            // Desenlazar el nodo del lado derecho de parent
+            node->parent->right = NULL;
+        }
+        free(node); // Eliminar el nodo liberando memoria
+        return;
+    }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
