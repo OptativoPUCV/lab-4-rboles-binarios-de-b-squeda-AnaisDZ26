@@ -165,7 +165,16 @@ Pair * firstTreeMap(TreeMap * tree) {
     tree->current = first_node;
     return first_node->pair;
 }
-
+// NextTree busca el par siguiente a current en orden creciente segun key
 Pair * nextTreeMap(TreeMap * tree) {
+    TreeNode *aux_node = tree->current;
+
+    // Si tiene subarbol derecho, el par debe estar en el minimo de ese subarbol
+    if (node->right != NULL){
+        node = minimum(node->right);
+        tree->current = node;
+        return node->pair;
+    }
+
     return NULL;
 }

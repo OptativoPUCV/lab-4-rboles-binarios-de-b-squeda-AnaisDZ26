@@ -111,3 +111,18 @@ Sun, May  4, 2025 12:27:54 AM:
  tests:  20|2
 total_score: 45/70
 ab7c9a6
+Sun, May  4, 2025 12:56:50 AM: 
+ treemap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:173:9: error: 'node' undeclared (first use in this function)
+     if (node->right != NULL){
+         ^~~~
+treemap.c:173:9: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:170:15: error: unused variable 'aux_node' [-Werror=unused-variable]
+     TreeNode *aux_node = tree->current;
+               ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+1a3da0a
