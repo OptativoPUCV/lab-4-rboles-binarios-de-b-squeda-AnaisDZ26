@@ -121,14 +121,12 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     // Caso con dos hijos (el orden sera el menor del sub arbol derecho)
     TreeNode *success = minimum(node->right);
-    // Se hara un auxiliar para guardar los datos
-    int success_key = success->pair->key;
-    void* success_value = success->pair->value;
+    // Copiar los datos del sucesor
+    node->pair->key = success->pair->key;
+    node->pair->value = success->pair->value;
+
     // Eliminar el sucesor
     removeNode(tree, success);
-    // Reemplazar el contenido de node con el del success
-    node->pair->key = success_key;
-    node->pair->value = success_value;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
