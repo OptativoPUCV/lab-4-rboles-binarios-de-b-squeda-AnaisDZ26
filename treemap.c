@@ -115,7 +115,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             node->parent->right = hijo;
         }
         // El puntero del hijo de node apunta a parent de node
-        child->parent = node->parent;
+        hijo->parent = node->parent;
         free(node);
         return;
     }

@@ -85,3 +85,9 @@ treemap.c:118:9: error: 'child' undeclared (first use in this function)
          ^~~~~
 treemap.c:118:9: note: each undeclared identifier is reported only once for each function it appears in
 d56679e
+Sun, May  4, 2025 12:17:58 AM: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  19|3
+total_score: 40/70
+6e369c1
